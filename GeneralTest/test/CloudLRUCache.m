@@ -1,10 +1,4 @@
-//
-//  CloudLRUCache.m
-//  WeiyunModel
-//
-//  Created by Rico on 13-8-1.
-//  Copyright (c) 2013年 tencent. All rights reserved.
-//
+
 #import "CloudLRUCache.h"
 #import "CloudRWLock.h"
 

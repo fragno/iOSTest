@@ -1,10 +1,3 @@
-//
-//  CloudLocalFileHandle.m
-//  WeiyunHD
-//
-//  Created by Rico on 13-1-17.
-//  Copyright (c) 2013年 Tencent. All rights reserved.
-//
 
 #import "CloudLocalFileHandle.h"
 
