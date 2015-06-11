@@ -5,16 +5,16 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>23A647CC-A8CE-4E4C-B734-C61D027EC6D6</string>
+	<string>7A68EB6B-8DE0-4116-82EC-C24606BE311A</string>
 	<key>IDESourceControlProjectName</key>
-	<string>MediaPayerTest</string>
+	<string>crashTreasure</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>984FC38AAB1E5FFC262B34CCD20AE44412ABA858</key>
 		<string>https://github.com/fragno/iOSTest.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>MediaPlayerTest/MediaPayerTest.xcodeproj</string>
+	<string>crashTreasure/crashTreasure.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>984FC38AAB1E5FFC262B34CCD20AE44412ABA858</key>

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AlbumTest/ViewController.m"
-            timestampString = "453730399.797948"
+            timestampString = "455718794.878408"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
             landmarkName = "-testRepresentationMetaData"
             landmarkType = "5">
          </BreakpointContent>
