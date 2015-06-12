@@ -10,4 +10,16 @@
 
 @implementation TestObject
 
+- (void) test
+{
+    __block TestObject* weakSelf = self;
+    double delayInSeconds = 5.0;
+    NSLog(@"block will execute in %lf s", delayInSeconds);
+    
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        NSLog(@"%@", weakSelf.testString);
+    });
+}
+
 @end

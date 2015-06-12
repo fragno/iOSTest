@@ -14,6 +14,11 @@
 @import UIKit;
 @import JavaScriptCore;
 
+
+typedef long (^BlkSum)(int, int);
+
+#pragma mark -
+#pragma mark - testObj
 @interface testObject : NSObject
 
 @property NSString *string1;
@@ -49,7 +54,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self testJSC];
+    [self test];
     
     // 真机不打印最后一条log
     NSLog(@"viewDidload");
@@ -106,9 +111,30 @@
 
 
 #pragma mark - test functions
+
+// 测试block
+- (void)test
+{
+    BlkSum blk1 = ^ long (int a, int b) {
+        return a + b;
+    };
+    NSLog(@"blk1 = %@", blk1);
+    
+    int base = 100;
+    BlkSum blk2 = ^ long (int a, int b) {
+        return base + a + b;
+    };
+    NSLog(@"blk2 = %@", blk2);
+    
+    BlkSum blk3 = [blk2 copy];
+    NSLog(@"blk3 = %@", blk3);
+}
+
+/**
+ *  测试javaScriptCore
+ */
 - (void)testJSC
 {
-    
     // OC call js
     JSContext *context = [[JSContext alloc] init];
     [context evaluateScript:@"var num = 5 + 5"];
@@ -187,7 +213,9 @@
     }
 }
 
-
+/**
+ *  测试UIAlertController，比UIAlertView好用
+ */
 - (void)testUIAlertController
 {
     UIAlertController * alert=   [UIAlertController
@@ -219,11 +247,9 @@
 }
 
 
-- (void)testClang
-{
-    
-}
-
+/**
+ *  测试KVC
+ */
 - (void)testKVC
 {
     testObject *testObj = [[testObject alloc] init];
@@ -234,23 +260,10 @@
     NSLog(@"sting1: %@", testObj.string1);
 }
 
-- (void)testSEGV_ACCERR
-{
-    NSMutableArray *array = [NSMutableArray array];
-    
-    dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        for (int i=0; i<10000; i++) {
-            [array addObject:@"ddsad"];
-        }
-    });
-    
-    dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        for (int i=0; i<10000; i++) {
-            [array addObject:@"ddasd"];
-        }
-    });
-}
 
+/**
+ *  测试获取DeviceName
+ */
 - (void)testDeviceName
 {
     NSLog(@"deviceName :%@", [self deviceName]);
@@ -268,7 +281,7 @@
     
     TICK;
     for (NSUInteger i = 0; i < 60000; i++) {
-        [cloudcache cacheObject:[NSString stringWithFormat:@"%ld", i] forKey:[NSNumber numberWithUnsignedInteger:i]];
+        [cloudcache cacheObject:[NSString stringWithFormat:@"%d", (unsigned int)i] forKey:[NSNumber numberWithUnsignedInteger:i]];
     }
     TOCK;
     
@@ -280,7 +293,7 @@
     
     startTime = [NSDate date];
     for (NSUInteger i = 0; i < 60000; i++) {
-        [dict setObject:[NSString stringWithFormat:@"%ld", i] forKey:[NSNumber numberWithUnsignedInteger:i]];
+        [dict setObject:[NSString stringWithFormat:@"%d", (unsigned int)i] forKey:[NSNumber numberWithUnsignedInteger:i]];
     }
     TOCK;
     
@@ -292,7 +305,7 @@
     
     startTime = [NSDate date];
     for (NSUInteger i = 0; i < 60000; i++) {
-        [nscache setObject:[NSString stringWithFormat:@"%ld", i] forKey:[NSNumber numberWithUnsignedInteger:i]];
+        [nscache setObject:[NSString stringWithFormat:@"%d", (unsigned int)i] forKey:[NSNumber numberWithUnsignedInteger:i]];
     }
     TOCK;
     
@@ -378,6 +391,7 @@
 }
 
 
+#pragma mark -
 #pragma mark - private
 
 - (NSString*)hexString:(NSData *)data

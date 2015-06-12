@@ -26,7 +26,7 @@ typedef void (^TestBlock)();
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [self testCrash];
+    [self crash];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,7 +38,16 @@ typedef void (^TestBlock)();
 #pragma mark -
 #pragma mark - testCrash
 
-- (void)testCrash_divide_by_zero
+- (void)crash
+{
+    TestObject* obj = [[[TestObject alloc] init] autorelease];
+    [obj test];
+}
+
+/**
+ *  模拟被0除的crash
+ */
+- (void)crash_divide_by_zero
 {
     unsigned int divider = 0;
     unsigned int dividend = 10;
@@ -46,8 +55,10 @@ typedef void (^TestBlock)();
     NSLog(@"%d", dividend/divider);
 }
 
-
-- (void)testCrash_unrecognized_selector_sent
+/**
+ *  模拟对象被释放后发送消息造成的crash
+ */
+- (void)crash_unrecognized_selector_sent
 {
 //    Method classMethod = class_getClassMethod ([self class], @selector(hellocrash));
     
@@ -64,26 +75,24 @@ typedef void (^TestBlock)();
 #pragma clang diagnostic pop
 }
 
-
-- (void)testCrash
+/**
+ *  模拟竞争crash
+ */
+- (void)crash_SEGV_ACCERR
 {
-    self.testArray = [NSMutableArray arrayWithObjects:@"1", @"2", nil];
-    NSLog(@"1: %p", self.testArray);
+    NSMutableArray *array = [NSMutableArray array];
     
-    TestBlock testBlock = ^{
-        [self.testArray addObject:@"4"];
-        NSLog(@"3: %p", self.testArray);
-    };
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), testBlock);
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_global_queue(0, 0), ^{
-        for (int i=0; i<1000; i++) {
-            self.testArray = [NSMutableArray arrayWithObjects:@"3", @"4", nil];
-            NSLog(@"2: %p", self.testArray);
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        for (int i=0; i<10000; i++) {
+            [array addObject:@"ddsad"];
         }
     });
     
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        for (int i=0; i<10000; i++) {
+            [array addObject:@"ddasd"];
+        }
+    });
 }
 
 @end

@@ -8,8 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+
 @interface TestObject : NSObject
 
 @property (nonatomic, strong) NSString* testString;
+
+- (void)test;
 
 @end
