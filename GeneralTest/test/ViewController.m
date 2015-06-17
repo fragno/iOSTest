@@ -21,7 +21,7 @@ typedef long (^BlkSum)(int, int);
 #pragma mark - testObj
 @interface testObject : NSObject
 
-@property NSString *string1;
+@property(nonatomic, strong) NSString *string1;
 
 @end
 
@@ -46,6 +46,9 @@ typedef long (^BlkSum)(int, int);
 
 @property (nonatomic) const void *bytes;
 @property (nonatomic) long length;
+@property (nonatomic, strong) NSString *testString;
+
+@property (nonatomic) IBOutlet UIView *testView;
 
 @end
 
@@ -53,8 +56,6 @@ typedef long (^BlkSum)(int, int);
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self test];
     
     // 真机不打印最后一条log
     NSLog(@"viewDidload");
@@ -71,6 +72,7 @@ typedef long (^BlkSum)(int, int);
 {
     [super viewDidAppear:animated];
 
+    [self test];
 //    [self testUIAlertController];
     
     NSLog(@"viewDidAppear");
@@ -112,8 +114,24 @@ typedef long (^BlkSum)(int, int);
 
 #pragma mark - test functions
 
-// 测试block
+// 测试leaks non-ARC with leak instruments
 - (void)test
+{
+    testObject *test = [[testObject alloc] init];
+    test.string1 = @"dasdasd";
+}
+
+
+// 测试CoreAnimation
+- (void)testCoreAnimation
+{
+    [UIView animateWithDuration:1.0 animations:^{
+        self.testView.layer.frame = [[UIScreen mainScreen] bounds];
+    }];
+}
+
+// 测试block
+- (void)testBlock
 {
     BlkSum blk1 = ^ long (int a, int b) {
         return a + b;
@@ -285,31 +303,41 @@ typedef long (^BlkSum)(int, int);
     }
     TOCK;
     
+#ifdef DEBUG
     startTime = [NSDate date];
+#endif
     for (NSUInteger i = 60000; i>0; i--) {
         [cloudcache objectForKey:[NSNumber numberWithUnsignedLong:i]];
     }
     TOCK;
     
+#ifdef DEBUG
     startTime = [NSDate date];
+#endif
     for (NSUInteger i = 0; i < 60000; i++) {
         [dict setObject:[NSString stringWithFormat:@"%d", (unsigned int)i] forKey:[NSNumber numberWithUnsignedInteger:i]];
     }
     TOCK;
     
+#ifdef DEBUG
     startTime = [NSDate date];
+#endif
     for (NSUInteger i = 0; i < 60000; i++) {
         [dict objectForKey:[NSNumber numberWithUnsignedInteger:i]];
     }
     TOCK;
     
+#ifdef DEBUG
     startTime = [NSDate date];
+#endif
     for (NSUInteger i = 0; i < 60000; i++) {
         [nscache setObject:[NSString stringWithFormat:@"%d", (unsigned int)i] forKey:[NSNumber numberWithUnsignedInteger:i]];
     }
     TOCK;
     
+#ifdef DEBUG
     startTime = [NSDate date];
+#endif
     for (NSUInteger i = 0; i < 60000; i++) {
         [nscache objectForKey:[NSNumber numberWithUnsignedInteger:i]];
     }

@@ -15,8 +15,25 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F8Y-U2-8pr">
+                                <rect key="frame" x="254" y="290" width="60" height="60"/>
+                                <color key="backgroundColor" red="1" green="0.22040000286137695" blue="0.20964364250547562" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="nYp-w5-dch"/>
+                                    <constraint firstAttribute="height" constant="60" id="yd3-Lt-8mb"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="0.3458261876" green="1" blue="0.76312866150000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="F8Y-U2-8pr" secondAttribute="centerX" constant="16" id="5Sm-0Y-SFq"/>
+                            <constraint firstAttribute="centerY" secondItem="F8Y-U2-8pr" secondAttribute="centerY" constant="-20" id="JPB-lU-zOe"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="testView" destination="F8Y-U2-8pr" id="Utm-gE-Zjm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
