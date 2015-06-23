@@ -10,7 +10,7 @@
 
 @interface TestSingleton : NSObject
 
-@property (nonatomic, retain) NSArray *array;
+@property (nonatomic, retain) NSString *str;
 
 + (instancetype)instance;
 

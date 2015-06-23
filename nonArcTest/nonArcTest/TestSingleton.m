@@ -17,13 +17,12 @@
     
     dispatch_once(&onceToken, ^{
         if (instance == nil) {
-            [[[self class] alloc] init];
+            instance = [[TestSingleton alloc] init];
         }
     });
     
     return instance;
 }
-
 
 
 @end
