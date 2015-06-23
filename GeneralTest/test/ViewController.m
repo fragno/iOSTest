@@ -14,7 +14,6 @@
 @import UIKit;
 @import JavaScriptCore;
 
-
 typedef long (^BlkSum)(int, int);
 
 #pragma mark -
@@ -72,7 +71,7 @@ typedef long (^BlkSum)(int, int);
 {
     [super viewDidAppear:animated];
 
-    [self test];
+//    [self test];
 //    [self testUIAlertController];
     
     NSLog(@"viewDidAppear");
@@ -113,14 +112,6 @@ typedef long (^BlkSum)(int, int);
 
 
 #pragma mark - test functions
-
-// 测试leaks non-ARC with leak instruments
-- (void)test
-{
-    testObject *test = [[testObject alloc] init];
-    test.string1 = @"dasdasd";
-}
-
 
 // 测试CoreAnimation
 - (void)testCoreAnimation
