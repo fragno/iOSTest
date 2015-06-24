@@ -54,6 +54,7 @@
     
     __block int count = 0;
     
+    __weak typeof(self) weakSelf = self;
     [self.library enumerateGroupsWithTypes:ALAssetsGroupAlbum|ALAssetsGroupSavedPhotos usingBlock:^(ALAssetsGroup *group, BOOL *stop) {
         dispatch_async(dispatch_get_global_queue(0, 0), ^{
             if ([[group valueForProperty:ALAssetsGroupPropertyType] integerValue] == ALAssetsGroupSavedPhotos) {
@@ -66,7 +67,10 @@
                             NSString *str = [exifData objectForKey:@"LensModel"];
                             count ++;
                             dispatch_async(dispatch_get_main_queue(), ^{
-                                [self.uilabel setText:str];
+                                __strong typeof(self) strongSelf = weakSelf;
+                                if (strongSelf) {
+                                    [strongSelf.uilabel setText:str];
+                                }
                             });
                             
                             NSLog(@"%d:%@", count, [metadata objectForKey:@"Depth"]);

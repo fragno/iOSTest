@@ -135,7 +135,7 @@
     long long readLen = 0ll;
     while (!done) {
         @autoreleasepool {
-            NSData *readData = [self readDataOfLength:blockSize];
+            NSData *readData = [self readDataOfLength:(unsigned int)blockSize];
             if (self.error) {
                 [self seekToFileOffset:originOffset];
                 return NO;

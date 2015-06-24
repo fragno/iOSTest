@@ -26,14 +26,6 @@
     self = [super init];
     
     if (self) {
-        
-        //temp handle start
-        //TODO:压缩包里压缩文件里的文件下载下载失败，暂时这样处理，请rico完善
-        NSString * dir = [path stringByDeletingLastPathComponent];
-        
-        //temp handle start
-        
-        
         NSError *error = nil;
         _fileHandle = [NSFileHandle fileHandleForWritingToURL:[NSURL fileURLWithPath:path] error:&error];
         if (_fileHandle == nil) {

@@ -43,6 +43,15 @@ static NSArray *testArray;
 
 - (void)test
 {
+    
+}
+
+/**
+ * 结论:
+ * 1、单例不会导致内存泄漏
+ */
+- (void)testSingleton
+{
     TestSingleton *test = [TestSingleton instance];
     test.str = [[NSString alloc] initWithFormat:@"dadsa"];
     
