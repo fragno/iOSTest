@@ -56,6 +56,8 @@ typedef long (^BlkSum)(int, int);
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self testKVO];
+    
     // 真机不打印最后一条log
     NSLog(@"viewDidload");
 }
@@ -70,9 +72,6 @@ typedef long (^BlkSum)(int, int);
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-
-//    [self test];
-//    [self testUIAlertController];
     
     NSLog(@"viewDidAppear");
 }
@@ -110,8 +109,29 @@ typedef long (^BlkSum)(int, int);
     // Dispose of any resources that can be recreated.
 }
 
+- (void)dealloc
+{
+    [self untestKVO];
+}
 
 #pragma mark - test functions
+// 测试KVO
+- (void)testKVO
+{
+    [self addObserver:self forKeyPath:@"testString" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
+    self.testString = @"test";
+}
+
+- (void)untestKVO
+{
+    [self removeObserver:self forKeyPath:@"testString"];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    NSLog(@"keyPath: %@", keyPath);
+    NSLog(@"keyPath: %@", keyPath);
+}
 
 // 测试CoreAnimation
 - (void)testCoreAnimation
@@ -177,7 +197,7 @@ typedef long (^BlkSum)(int, int);
     
     
     // js call OC methods
-    // export Person class
+    // export Person class, 重要的是这个
     context[@"Person"] = [Person class];
     
     // load Mustache.js

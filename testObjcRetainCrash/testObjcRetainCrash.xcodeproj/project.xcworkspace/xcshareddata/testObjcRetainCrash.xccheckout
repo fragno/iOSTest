@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>DD5EF7BD-ACD9-49DB-BAD0-8CFFFB645127</string>
+	<string>A5C10A88-67E3-44FB-B9A6-C2FFD3638DF6</string>
 	<key>IDESourceControlProjectName</key>
 	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -14,7 +14,7 @@
 		<string>https://github.com/fragno/iOSTest.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>AlbumTest/AlbumTest.xcodeproj/project.xcworkspace</string>
+	<string>testObjcRetainCrash/testObjcRetainCrash.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>984FC38AAB1E5FFC262B34CCD20AE44412ABA858</key>

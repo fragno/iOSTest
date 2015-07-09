@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "TestSingleton.h"
-
+#import "TestObject.h"
 
 static NSArray *testArray;
 
@@ -43,7 +43,38 @@ static NSArray *testArray;
 
 - (void)test
 {
+    if ([NSThread isMainThread]) {
+        
+        __block BOOL complete = NO;
+        
+        dispatch_block_t block = ^{
+            complete = YES;
+        };
+        
+        // 主线程runloop 等待
+        while (complete == NO) {
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                block();
+            });
+            
+            NSDate* waitDate = [NSDate dateWithTimeIntervalSinceNow:0.01f];
+            [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:waitDate];
+        }
+    }
+}
+
+/**
+ *  测试对某个对象的变量的强引用不会对该对象retain
+ */
+- (void)testRetainObjMember
+{
+    TestObject *obj = [[[TestObject alloc] init] autorelease];
+    obj.testArray = [NSArray arrayWithObjects:@"dasdsa", nil];
     
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        NSLog(@"%@", obj.testArray);
+        [obj.testArray retain];
+    });
 }
 
 /**

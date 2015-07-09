@@ -25,8 +25,6 @@ typedef void (^TestBlock)();
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    [self crash];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,10 +36,27 @@ typedef void (^TestBlock)();
 #pragma mark -
 #pragma mark - testCrash
 
-- (void)crash
+/**
+ *  测试objc_retain crash
+ *  使用：在viewdidload中调用[self performSelector:@selector(crashWithIdParam:)];
+ *  会造成objc_retaincrash，原因是param对象非法
+ */
+- (void)crashWithIdParam:(id)param
 {
+    NSLog(@"let's crash, %@", param);
+}
+
+
+/**
+ *  测试对象被释放导致的crash
+ *  change the project to non-arc to test
+ */
+- (void)test
+{
+#if 0
     TestObject* obj = [[[TestObject alloc] init] autorelease];
     [obj test];
+#endif
 }
 
 /**

@@ -15,6 +15,7 @@
 		668ECFC71B39663900FCC89D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 668ECFC51B39663900FCC89D /* LaunchScreen.xib */; };
 		668ECFD31B39663900FCC89D /* nonArcTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 668ECFD21B39663900FCC89D /* nonArcTestTests.m */; };
 		668ECFDE1B397CB400FCC89D /* TestSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 668ECFDD1B397CB400FCC89D /* TestSingleton.m */; };
+		66F718711B411BEE002A2FDF /* TestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F718701B411BEE002A2FDF /* TestObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,8 @@
 		668ECFD21B39663900FCC89D /* nonArcTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = nonArcTestTests.m; sourceTree = "<group>"; };
 		668ECFDC1B397CB400FCC89D /* TestSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestSingleton.h; sourceTree = "<group>"; };
 		668ECFDD1B397CB400FCC89D /* TestSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestSingleton.m; sourceTree = "<group>"; };
+		66F7186F1B411BEE002A2FDF /* TestObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestObject.h; sourceTree = "<group>"; };
+		66F718701B411BEE002A2FDF /* TestObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,13 +90,15 @@
 				668ECFBA1B39663900FCC89D /* AppDelegate.h */,
 				668ECFBB1B39663900FCC89D /* AppDelegate.m */,
 				668ECFBD1B39663900FCC89D /* ViewController.h */,
-				668ECFDC1B397CB400FCC89D /* TestSingleton.h */,
-				668ECFDD1B397CB400FCC89D /* TestSingleton.m */,
 				668ECFBE1B39663900FCC89D /* ViewController.m */,
 				668ECFC01B39663900FCC89D /* Main.storyboard */,
 				668ECFC31B39663900FCC89D /* Images.xcassets */,
 				668ECFC51B39663900FCC89D /* LaunchScreen.xib */,
 				668ECFB61B39663900FCC89D /* Supporting Files */,
+				668ECFDC1B397CB400FCC89D /* TestSingleton.h */,
+				668ECFDD1B397CB400FCC89D /* TestSingleton.m */,
+				66F7186F1B411BEE002A2FDF /* TestObject.h */,
+				66F718701B411BEE002A2FDF /* TestObject.m */,
 			);
 			path = nonArcTest;
 			sourceTree = "<group>";
@@ -226,6 +231,7 @@
 			files = (
 				668ECFBF1B39663900FCC89D /* ViewController.m in Sources */,
 				668ECFDE1B397CB400FCC89D /* TestSingleton.m in Sources */,
+				66F718711B411BEE002A2FDF /* TestObject.m in Sources */,
 				668ECFBC1B39663900FCC89D /* AppDelegate.m in Sources */,
 				668ECFB91B39663900FCC89D /* main.m in Sources */,
 			);
@@ -424,6 +430,7 @@
 				668ECFD81B39663900FCC89D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		668ECFD91B39663900FCC89D /* Build configuration list for PBXNativeTarget "nonArcTestTests" */ = {
 			isa = XCConfigurationList;
@@ -432,6 +439,7 @@
 				668ECFDB1B39663900FCC89D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

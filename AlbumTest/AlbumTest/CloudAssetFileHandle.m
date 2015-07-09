@@ -9,7 +9,7 @@
 @property (nonatomic, strong) ALAssetsLibrary *library;
 
 @property (atomic, assign) BOOL lock;
-@property (nonatomic, assign) dispatch_semaphore_t sema;
+@property (nonatomic, strong) dispatch_semaphore_t sema;
 
 @end
 
@@ -19,6 +19,7 @@
     self = [super init];
     
     if (self) {
+        _sema = dispatch_semaphore_create(0);
         [self assetForPath:path];
     }
     

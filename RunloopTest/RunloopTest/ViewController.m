@@ -57,6 +57,7 @@
             // 运行完之后，会再一次调用回调函数，状态是kCFRunLoopExit，表示循环结束。
             
             loopCount--;
+            NSLog(@"loopCount: %ld", (long)loopCount);
         }
         while (loopCount);
         

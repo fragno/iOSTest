@@ -29,6 +29,7 @@
     
     [self.uibutton setTitle:@"开始测试" forState:UIControlStateNormal];
     [self.uibutton setTitle:@"正在测试" forState:UIControlStateDisabled];
+    [self testMD5Speed];
 }
 
 - (void)viewDidAppear:(BOOL)animated
