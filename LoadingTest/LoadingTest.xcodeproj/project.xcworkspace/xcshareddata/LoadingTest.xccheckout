@@ -5,16 +5,16 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>B439786E-32A9-4FF8-BC57-03298EEA11A1</string>
+	<string>7ACDE5F9-E44B-4F52-936E-DC37E2AC4863</string>
 	<key>IDESourceControlProjectName</key>
-	<string>test</string>
+	<string>LoadingTest</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>984FC38AAB1E5FFC262B34CCD20AE44412ABA858</key>
 		<string>github.com:fragno/iOSTest.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>GeneralTest/test.xcodeproj</string>
+	<string>LoadingTest/LoadingTest.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>984FC38AAB1E5FFC262B34CCD20AE44412ABA858</key>

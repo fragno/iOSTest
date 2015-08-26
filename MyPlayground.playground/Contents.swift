@@ -2,6 +2,7 @@
 
 import UIKit
 
+#if false
 var str = "Hello, playground"
 
 var myVariable = 42
@@ -410,6 +411,41 @@ class SimpleClass: ExampleProtocol {
 var a = SimpleClass()
 a.adjust()
 let aDescription = a.simpleDescription
+
+#endif
+
+var numberOfLegs = ["sprider":8, "ant":"dasd", "cat":4]
+numberOfLegs["bird"] = "dadas"
+print(numberOfLegs)
+
+struct Matrix {
+    let rows: Int, columns: Int
+    var grid: [Double]
+    init(rows: Int, columns: Int) {
+        self.rows = rows
+        self.columns = columns
+        grid = Array(count: rows * columns, repeatedValue: 0.0)
+    }
+    
+    func indexIsValidForRow(row: Int, column: Int) -> Bool {
+        return row >= 0 && row < rows && column >= 0 && column < columns
+    }
+    
+    subscript(row: Int, column: Int) -> Double {
+        get {
+            assert(indexIsValidForRow(row, column: column), "Index out of range")
+            return grid[(row * columns) + column]
+        }
+        
+        set {
+            assert(indexIsValidForRow(row, column: column), "Index out of range")
+            grid[(row * columns) + column] = newValue
+        }
+    }
+}
+
+
+
 
 
 
