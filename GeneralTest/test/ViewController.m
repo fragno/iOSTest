@@ -14,7 +14,12 @@
 @import UIKit;
 @import JavaScriptCore;
 
+#define A "dasd"
+#define B @"dsada" A "dasda"
+
+
 typedef long (^BlkSum)(int, int);
+
 
 #pragma mark -
 #pragma mark - testObj
@@ -56,7 +61,10 @@ typedef long (^BlkSum)(int, int);
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self testKVO];
+//    [self testKVO];
+    
+    NSLog(@"%@", @A);
+    NSLog(@"%@", B);
     
     // 真机不打印最后一条log
     NSLog(@"viewDidload");
