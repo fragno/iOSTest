@@ -13,6 +13,8 @@
 		E85180961C22D6A700F5E3D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E85180941C22D6A700F5E3D4 /* Main.storyboard */; };
 		E85180981C22D6A700F5E3D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E85180971C22D6A700F5E3D4 /* Assets.xcassets */; };
 		E851809B1C22D6A700F5E3D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E85180991C22D6A700F5E3D4 /* LaunchScreen.storyboard */; };
+		E85180A61C22E85900F5E3D4 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E85180A41C22E37000F5E3D4 /* Settings.bundle */; };
+		E85180AB1C22EBE000F5E3D4 /* TestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E85180A91C22EBC400F5E3D4 /* TestView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		E85180971C22D6A700F5E3D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E851809A1C22D6A700F5E3D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E851809C1C22D6A700F5E3D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E85180A41C22E37000F5E3D4 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		E85180A91C22EBC400F5E3D4 /* TestView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +70,9 @@
 				E85180971C22D6A700F5E3D4 /* Assets.xcassets */,
 				E85180991C22D6A700F5E3D4 /* LaunchScreen.storyboard */,
 				E851809C1C22D6A700F5E3D4 /* Info.plist */,
+				E85180A91C22EBC400F5E3D4 /* TestView.xib */,
 				E851808B1C22D6A700F5E3D4 /* Supporting Files */,
+				E85180A41C22E37000F5E3D4 /* Settings.bundle */,
 			);
 			path = XibTest;
 			sourceTree = "<group>";
@@ -137,8 +143,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E85180A61C22E85900F5E3D4 /* Settings.bundle in Resources */,
 				E851809B1C22D6A700F5E3D4 /* LaunchScreen.storyboard in Resources */,
 				E85180981C22D6A700F5E3D4 /* Assets.xcassets in Resources */,
+				E85180AB1C22EBE000F5E3D4 /* TestView.xib in Resources */,
 				E85180961C22D6A700F5E3D4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -299,6 +307,7 @@
 				E85180A11C22D6A700F5E3D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
