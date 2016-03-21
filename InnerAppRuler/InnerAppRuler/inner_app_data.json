@@ -1,0 +1,68 @@
+{
+  "datalist": [
+    {
+      "id": "1",
+      "metadataName": "ctime",
+      "metadataLable": "当前时间",
+      "metadataType": "val",
+      "metadataPeriod": 0,
+      "metadataParamsInfo": [
+        {
+          "paramName": "time",
+          "paramLable": "开始时间",
+          "paramOp": ">,>=,<,<="
+        },
+        {
+          "paramName": "time",
+          "paramLable": "结束时间",
+          "paramOp": ">,>=,<,<="
+        }
+      ]
+    }
+  ],
+  "rules": [
+    {
+      "id": "1",
+      "ruleName": "alert_rule",
+      "ruleLable": "这个是一个测试规则",
+      "ruleConditions": [
+        {
+          "metadataName": "ctime",
+          "conditions": [
+            {
+              "param": "time",
+              "opCode": "<",
+              "eqVal": "09:00:00"
+            },
+            {
+              "param": "time",
+              "opCode": ">",
+              "eqVal": "15:00:00"
+            }
+          ]
+        },
+        {
+          "metadataName": "login_time",
+          "conditions": [
+            {
+              "param": "time",
+              "opCode": ">=",
+              "eqVal": "5"
+            }
+          ]
+        }
+      ],
+      "actions": [
+        "alert"
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "id":"1",
+      "sceneName":"fund_view",
+      "sceneLable":"测试",
+      "ruleNames":["alert_rule"]
+    }
+  ]
+}
