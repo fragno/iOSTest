@@ -581,8 +581,6 @@ if let oneUnnamed = CartItem(name: "", quantity: 1) {
     print("Unable to initialize one unnamed product")
 }
 
-#endif
-
 class Address {
     var buildingName: String?
     var buildingNumber: String?
@@ -671,6 +669,39 @@ var testScores = ["Dave": [86, 82, 84], "Bev": [79, 94, 81]]
 testScores["Dave"]?[0] = 91
 testScores["Bev"]?[0]++
 testScores["Brian"]?[0] = 72
+#endif
 
+class MediaItem {
+    var name: String
+    init(name: String) {
+        self.name = name
+    }
+}
 
+class Movie: MediaItem {
+    var director: String
+    init(name: String, director: String) {
+        self.director = director
+        super.init(name: name)
+    }
+}
 
+class Song: MediaItem {
+    var artist: String
+    init(name: String, artist: String) {
+        self.artist = artist
+        super.init(name: name)
+    }
+}
+
+// AnyObject能够代表任何类类型
+// Any能够代表任何类型，包含函数类型
+
+// extensions能够对现存的类、结构、枚举、协议添加新的函数
+// extensions能够实现以下几个目的：
+// 1、增加计算得出的实例属性和类属性
+// 2、定义实例方法和类方法
+// 3、提供新的初始化函数
+// 4、定义下标
+// 5、定义和使用新的嵌套类型
+// 6、使现存的类型符合特定的协议
