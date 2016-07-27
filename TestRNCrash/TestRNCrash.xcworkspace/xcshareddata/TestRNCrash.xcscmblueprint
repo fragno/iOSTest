@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "984FC38AAB1E5FFC262B34CCD20AE44412ABA858",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "81FB28692BB3BF1943F998B0A3A532A0ED170EAC" : 0,
+    "984FC38AAB1E5FFC262B34CCD20AE44412ABA858" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "A6C0A912-9158-4EFC-A8B7-1EBC8B1B08B0",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "81FB28692BB3BF1943F998B0A3A532A0ED170EAC" : "..\/Program\/AliSources\/ios_wealth_base",
+    "984FC38AAB1E5FFC262B34CCD20AE44412ABA858" : "iOSTest\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "TestRNCrash",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "TestRNCrash\/TestRNCrash.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "gitlab.alipay-inc.com:AlipayWealth\/ios_wealth_base.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "81FB28692BB3BF1943F998B0A3A532A0ED170EAC"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:fragno\/iOSTest.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "984FC38AAB1E5FFC262B34CCD20AE44412ABA858"
+    }
+  ]
+}

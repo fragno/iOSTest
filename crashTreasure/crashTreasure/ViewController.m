@@ -25,6 +25,12 @@ typedef void (^TestBlock)();
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization
+                        dataWithJSONObject:nil
+                        options:(NSJSONWritingOptions)NSJSONReadingAllowFragments
+                        error:&error];
 }
 
 - (void)didReceiveMemoryWarning {
