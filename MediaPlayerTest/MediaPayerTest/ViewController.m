@@ -42,39 +42,36 @@
 {
     [super viewDidAppear:animated];
     
-    NSURL *videoUrl = [[NSURL alloc] initWithString:@"http://183.57.53.27/vcloud.tc.qq.com/1033_6fc864d387544ed89b6b9d0ce454a22a.f20.mp4?vkey=119BA008302E647553811484E47D12DE8AD4F1B9313DDE355C801F8952779D4EAD798DAA604D299F"];
+    NSURL *videoUrl = [[NSURL alloc] initWithString:@"http://cloud.video.taobao.com/play/u/503667663/p/1/e/6/t/1/45950598.mp4"];
     NSLog(@"videoUrl: %@", videoUrl);
     
-//    if (0) {
-//        AVPlayer *player = [[AVPlayer alloc] initWithURL:videoUrl];
-//        AVPlayerViewController *playerController = [[AVPlayerViewController alloc] init];
-//        
-//        playerController.player = player;
-//        [self addChildViewController:playerController];
-//        [self.videoVIew addSubview:playerController.view];
-//        playerController.view.frame = self.videoVIew.frame;
-//        playerController.videoGravity = AVLayerVideoGravityResizeAspect;
-//        self.view.autoresizesSubviews = TRUE;
-//        
-//        [player play];
-//    }
+    if (0) {
+        AVPlayer *player = [[AVPlayer alloc] initWithURL:videoUrl];
+        AVPlayerViewController *playerController = [[AVPlayerViewController alloc] init];
+        
+        playerController.player = player;
+        [self addChildViewController:playerController];
+        [self.videoVIew addSubview:playerController.view];
+        playerController.view.frame = self.videoVIew.frame;
+        playerController.videoGravity = AVLayerVideoGravityResizeAspect;
+        self.view.autoresizesSubviews = TRUE;
+        
+        [player play];
+    }
     
     if (1) {
         MPMoviePlayerController *playerViewController = [[MPMoviePlayerController alloc] initWithContentURL:videoUrl];
         self.mc = playerViewController;
         
-//        playerViewController.movieSourceType = MPMovieSourceTypeStreaming;
-//        playerViewController.scalingMode = MPMovieScalingModeAspectFill;
-//        playerViewController.controlStyle = MPMovieControlStyleNone;
+        playerViewController.movieSourceType = MPMovieSourceTypeStreaming;
+        playerViewController.scalingMode = MPMovieScalingModeAspectFill;
+        playerViewController.controlStyle = MPMovieControlStyleEmbedded;
         playerViewController.fullscreen = NO;
         playerViewController.allowsAirPlay = NO;
         playerViewController.shouldAutoplay = NO;
         playerViewController.repeatMode = MPMovieRepeatModeNone;
-        
-//        [self.navigationController presentMoviePlayerViewControllerAnimated:playerViewController];
-        
-        [playerViewController.view setFrame:self.videoVIew.bounds];
         [self.videoVIew addSubview:playerViewController.view];
+        playerViewController.view.frame = self.videoVIew.frame;
         
         [playerViewController play];
     }
