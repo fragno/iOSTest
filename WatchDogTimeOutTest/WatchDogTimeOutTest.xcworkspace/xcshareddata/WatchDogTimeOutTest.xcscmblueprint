@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "984FC38AAB1E5FFC262B34CCD20AE44412ABA858",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "C7C6F7063BDDA3DE8369DA328451FE1D0A969DD5" : 9223372036854775807,
+    "984FC38AAB1E5FFC262B34CCD20AE44412ABA858" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "A089B3E2-73C2-4F2B-8C4A-03CCE706E5D0",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "C7C6F7063BDDA3DE8369DA328451FE1D0A969DD5" : "plcrashreporter\/",
+    "984FC38AAB1E5FFC262B34CCD20AE44412ABA858" : "iOSTest\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "WatchDogTimeOutTest",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "WatchDogTimeOutTest\/WatchDogTimeOutTest.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:fragno\/iOSTest.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "984FC38AAB1E5FFC262B34CCD20AE44412ABA858"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:plausiblelabs\/plcrashreporter.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C7C6F7063BDDA3DE8369DA328451FE1D0A969DD5"
+    }
+  ]
+}
